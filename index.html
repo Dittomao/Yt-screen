@@ -1,25 +1,38 @@
-<div class="auto-resizable-iframe"  <div>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/1wG1NiqOqPw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          </div>
-<style>
-  .auto-resizable-iframe {
-      max-width: 560px;
-        margin: 0px auto;
-        }
+<div class="auto-resizable-iframe">
+      <div id="video-container"></div>
+      </div>
 
-        .auto-resizable-iframe > div {
-          position: relative;
-            padding-bottom: 75%;
-              height: 0px;
-              }
+      <script>
+        // Function to set the YouTube video URL dynamically
+          function setYouTubeVideo(videoId) {
+              var container = document.getElementById('video-container');
+                  container.innerHTML = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + videoId + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                    }
 
-              .auto-resizable-iframe iframe {
-                position: absolute;
-                  top: 0px;
-                    left: 0px;
-                      width: 100%;
-                        height: 100%;
-                        }
-  
-</style>
+                      // Example usage:
+                        var youtubeVideoId = '1wG1NiqOqPw'; // Replace with any YouTube video ID
+                          setYouTubeVideo(youtubeVideoId);
+                          </script>
+
+                          <style>
+                            .auto-resizable-iframe {
+                                max-width: 560px;
+                                    margin: 0 auto;
+                                      }
+
+                                        .auto-resizable-iframe > div {
+                                            position: relative;
+                                                padding-bottom: 56.25%; /* Aspect ratio (height/width) for 16:9 videos */
+                                                    height: 0;
+                                                        overflow: hidden;
+                                                          }
+
+                                                            .auto-resizable-iframe iframe {
+                                                                position: absolute;
+                                                                    top: 0;
+                                                                        left: 0;
+                                                                            width: 100%;
+                                                                                height: 100%;
+                                                                                  }
+                                                                                  </style>
+                                                                                  
